@@ -1,0 +1,54 @@
+### Variables
+@host = http://localhost:8080
+@baseUrl = {{host}}/api/productos
+
+
+### 1. Obtener todos los productos
+GET {{baseUrl}}
+Accept: application/json
+
+
+### 2. Obtener solamente productos disponibles
+GET {{baseUrl}}/disponibles
+Accept: application/json
+
+
+### 3. Obtener producto por ID
+GET {{baseUrl}}/1
+Accept: application/json
+
+
+### 4. Crear un nuevo producto
+POST {{baseUrl}}
+Content-Type: application/json
+Accept: application/json
+
+{
+  "nombre": "Webcam HD",
+  "descripcion": "Webcam Full HD para videoconferencias",
+  "precio": 189.90,
+  "disponible": true
+}
+
+
+### 5. Actualizar producto con ID 1
+PUT {{baseUrl}}/1
+Content-Type: application/json
+Accept: application/json
+
+{
+  "nombre": "Laptop Pro Actualizada",
+  "descripcion": "Laptop profesional para desarrollo de software",
+  "precio": 1399.99,
+  "disponible": true
+}
+
+
+### 6. Eliminar producto con ID 1
+DELETE {{baseUrl}}/1
+Accept: application/json
+
+
+### 7. Buscar productos por nombre
+GET {{baseUrl}}/buscar?nombre=laptop
+Accept: application/json
